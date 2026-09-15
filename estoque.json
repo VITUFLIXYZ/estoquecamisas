@@ -1,7 +1,7 @@
 [
   { "tamanho": "M", "quantidade": 0 },
   { "tamanho": "G", "quantidade": 1 },
-  { "tamanho": "GG", "quantidade": 1 },
+  { "tamanho": "GG", "quantidade": 0 },
   { "tamanho": "P", "quantidade": 5 },
   { "tamanho": "PP", "quantidade": 11 },
   { "tamanho": "10 anos", "quantidade": 3 },
