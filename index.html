@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estoque de Camisas - Festejo de Santa Rita de Cássia</title>
+  <title>Estoque & Encomendas - Festejo de Santa Rita</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -22,11 +22,7 @@
       --shadow: 0 4px 15px rgba(107, 15, 26, 0.08);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
@@ -49,33 +45,17 @@
     header::after {
       content: '';
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      bottom: 0; left: 0; right: 0;
       height: 4px;
       background: linear-gradient(90deg, var(--secondary), var(--secondary-light), var(--secondary));
     }
 
-    .header-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    h1 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-      letter-spacing: 1px;
-    }
-
-    .subtitle {
-      font-size: 0.95rem;
-      opacity: 0.9;
-      font-weight: 400;
-    }
+    .header-content { max-width: 900px; margin: 0 auto; }
+    h1 { font-family: 'Cinzel', serif; font-size: 1.8rem; margin-bottom: 0.5rem; letter-spacing: 1px; }
+    .subtitle { font-size: 0.95rem; opacity: 0.9; font-weight: 400; }
 
     main {
-      max-width: 800px;
+      max-width: 900px;
       width: 100%;
       margin: 0 auto;
       padding: 1.5rem 1rem;
@@ -106,14 +86,7 @@
       box-shadow: 0 2px 8px rgba(179, 135, 40, 0.3);
     }
 
-    .sync-btn:hover {
-      background-color: #966f1e;
-      transform: translateY(-1px);
-    }
-
-    .sync-btn:active {
-      transform: translateY(0);
-    }
+    .sync-btn:hover { background-color: #966f1e; transform: translateY(-1px); }
 
     .status-badge {
       font-size: 0.85rem;
@@ -137,29 +110,19 @@
       box-shadow: var(--shadow);
       margin-bottom: 1.5rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
       gap: 1rem;
       text-align: center;
       border-left: 4px solid var(--primary);
     }
 
-    .stat-item .value {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    .stat-item .label {
-      font-size: 0.8rem;
-      color: var(--text-light);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+    .stat-item .value { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+    .stat-item .label { font-size: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; }
 
     .inventory-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.2rem;
     }
 
     .card {
@@ -178,46 +141,18 @@
     .card::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
+      top: 0; left: 0; width: 100%; height: 4px;
       background-color: var(--primary);
     }
 
-    .card.low-stock::before {
-      background-color: var(--warning);
-    }
+    .card.low-stock::before { background-color: var(--warning); }
+    .card.out-of-stock::before { background-color: var(--danger); }
 
-    .card.out-of-stock::before {
-      background-color: var(--danger);
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-
-    .size-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .qty-badge {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    .out-of-stock .qty-badge {
-      color: var(--danger);
-    }
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+    .size-title { font-size: 1.3rem; font-weight: 700; color: var(--text); }
 
     .stock-status {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       padding: 0.2rem 0.5rem;
       border-radius: 12px;
       font-weight: 600;
@@ -228,24 +163,44 @@
     .status-low { background-color: #fef5e7; color: var(--warning); }
     .status-out { background-color: #fadbd8; color: var(--danger); }
 
-    .instructions-card {
-      background-color: #f4eef0;
-      border: 1px solid #e0d0d5;
-      border-radius: var(--border-radius);
-      padding: 1.25rem;
-      margin-top: 2rem;
-      font-size: 0.88rem;
+    .details-list {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
     }
 
-    .instructions-card h3 {
+    .details-row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .available-box {
+      background-color: #fdfaf3;
+      border: 1px solid var(--secondary-light);
+      border-radius: 8px;
+      padding: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .available-box .label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .available-box .qty {
+      font-size: 1.4rem;
+      font-weight: 700;
       color: var(--primary);
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
     }
 
-    .instructions-card ol {
-      margin-left: 1.2rem;
-      line-height: 1.5;
+    .out-of-stock .available-box .qty {
+      color: var(--danger);
     }
 
     .loading-spinner {
@@ -258,17 +213,8 @@
       animation: spin 1s ease-in-out infinite;
     }
 
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.8rem;
-      color: var(--text-light);
-      margin-top: auto;
-    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    footer { text-align: center; padding: 1.5rem; font-size: 0.8rem; color: var(--text-light); margin-top: auto; }
   </style>
 </head>
 <body>
@@ -276,7 +222,7 @@
   <header>
     <div class="header-content">
       <h1>Festejo de Santa Rita de Cássia</h1>
-      <p class="subtitle">Controle de Estoque de Camisas Oficial</p>
+      <p class="subtitle">Controle Integrado de Estoque, Produção e Reservas</p>
     </div>
   </header>
 
@@ -287,38 +233,30 @@
       </button>
       <div class="status-badge">
         <span class="status-dot" id="status-dot"></span>
-        <span id="last-updated">Atualizado agora</span>
+        <span id="last-updated">Carregando...</span>
       </div>
     </div>
 
     <div class="stats-card">
       <div class="stat-item">
-        <div class="value" id="total-camisas">0</div>
-        <div class="label">Total de Camisas</div>
+        <div class="value" id="total-fisico">0</div>
+        <div class="label">Estoque Físico</div>
       </div>
       <div class="stat-item">
-        <div class="value" id="total-tamanhos">0</div>
-        <div class="label">Tamanhos Opções</div>
+        <div class="value" id="total-producao">0</div>
+        <div class="label">Em Produção</div>
       </div>
       <div class="stat-item">
-        <div class="value" id="tamanhos-esgotados">0</div>
-        <div class="label">Esgotados</div>
+        <div class="value" id="total-reservas">0</div>
+        <div class="label">Pedidos Reservados</div>
+      </div>
+      <div class="stat-item">
+        <div class="value" id="total-disponivel" style="color: var(--success);">0</div>
+        <div class="label">Livre pra Vender</div>
       </div>
     </div>
 
-    <div class="inventory-grid" id="inventory-grid">
-      <!-- Os cards de tamanhos serão inseridos aqui -->
-    </div>
-
-    <div class="instructions-card">
-      <h3>ℹ️ Como atualizar os dados do estoque:</h3>
-      <ol>
-        <li>Acesse o arquivo <b>estoque.json</b> no repositório do seu GitHub.</li>
-        <li>Altere as quantidades conforme forem ocorrendo as vendas.</li>
-        <li>Salve a alteração no GitHub (Commit).</li>
-        <li>Volte aqui nesta página e clique no botão <b>"🔄 Sincronizar Estoque"</b>.</li>
-      </ol>
-    </div>
+    <div class="inventory-grid" id="inventory-grid"></div>
   </main>
 
   <footer>
@@ -334,24 +272,28 @@
       syncIcon.innerHTML = '<span class="loading-spinner"></span>';
 
       try {
-        // Adiciona timestamp para evitar cache do navegador e pegar os dados mais recentes do GitHub
         const response = await fetch(`estoque.json?v=${new Date().getTime()}`);
         
         if (!response.ok) {
           throw new Error('Não foi possível carregar o arquivo estoque.json');
         }
 
-        const estoque = await response.json();
+        const data = await response.json();
+        const estoque = data.itens || [];
+        const dataJson = data.ultima_atualizacao;
+
         renderizarEstoque(estoque);
 
         statusDot.style.backgroundColor = 'var(--success)';
         const agora = new Date();
-        lastUpdated.textContent = `Atualizado às ${agora.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
+        const horaAtual = agora.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        const dataExibicao = dataJson ? dataJson : agora.toLocaleDateString('pt-BR');
+
+        lastUpdated.textContent = `Atualizado em ${dataExibicao} às ${horaAtual}`;
       } catch (error) {
         console.error("Erro:", error);
         statusDot.style.backgroundColor = 'var(--danger)';
         lastUpdated.textContent = "Erro ao sincronizar";
-        alert("Erro ao ler o arquivo estoque.json. Verifique se o arquivo existe na raiz do repositório.");
       } finally {
         syncIcon.textContent = '🔄';
       }
@@ -361,24 +303,35 @@
       const grid = document.getElementById('inventory-grid');
       grid.innerHTML = '';
 
-      let totalCamisas = 0;
-      let esgotados = 0;
+      let sumFisico = 0;
+      let sumProducao = 0;
+      let sumReservas = 0;
+      let sumDisponivel = 0;
 
       estoque.forEach(item => {
-        totalCamisas += item.quantidade;
-        if (item.quantidade === 0) esgotados++;
+        const fisico = item.fisico || 0;
+        const producao = item.producao || 0;
+        const reservado = item.reservado || 0;
+        
+        // Fórmula: (Físico + Produção) - Reservados
+        const disponivel = (fisico + producao) - reservado;
+
+        sumFisico += fisico;
+        sumProducao += producao;
+        sumReservas += reservado;
+        sumDisponivel += Math.max(0, disponivel);
 
         let statusClass = 'status-ok';
-        let statusText = 'Disponível';
+        let statusText = 'Livre';
         let cardClass = '';
 
-        if (item.quantidade === 0) {
+        if (disponivel <= 0) {
           statusClass = 'status-out';
-          statusText = 'Esgotado';
+          statusText = 'Sem Saldo';
           cardClass = 'out-of-stock';
-        } else if (item.quantidade <= 2) {
+        } else if (disponivel <= 2) {
           statusClass = 'status-low';
-          statusText = 'Poucas Unid.';
+          statusText = 'Restam Poucas';
           cardClass = 'low-stock';
         }
 
@@ -387,25 +340,41 @@
         card.innerHTML = `
           <div>
             <div class="card-header">
-              <span class="size-title">Tamanho ${item.tamanho}</span>
+              <span class="size-title">${item.tamanho}</span>
               <span class="stock-status ${statusClass}">${statusText}</span>
             </div>
+
+            <div class="details-list">
+              <div class="details-row">
+                <span>Estoque físico (atual):</span>
+                <strong>${fisico} un.</strong>
+              </div>
+              <div class="details-row">
+                <span>Em Produção:</span>
+                <strong>+${producao} un.</strong>
+              </div>
+              <div class="details-row">
+                <span>Pedidos Reservados:</span>
+                <strong style="color: var(--danger);">- ${reservado} un.</strong>
+              </div>
+            </div>
           </div>
-          <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 1rem;">
-            <span style="font-size: 0.85rem; color: var(--text-light);">Estoque atual:</span>
-            <span class="qty-badge">${item.quantidade} <small style="font-size: 0.8rem; font-weight: normal;">un.</small></span>
+
+          <div class="available-box">
+            <span class="label">Pode Vender:</span>
+            <span class="qty">${disponivel} <small style="font-size:0.8rem;">un.</small></span>
           </div>
         `;
 
         grid.appendChild(card);
       });
 
-      document.getElementById('total-camisas').textContent = totalCamisas;
-      document.getElementById('total-tamanhos').textContent = estoque.length;
-      document.getElementById('tamanhos-esgotados').textContent = esgotados;
+      document.getElementById('total-fisico').textContent = sumFisico;
+      document.getElementById('total-producao').textContent = sumProducao;
+      document.getElementById('total-reservas').textContent = sumReservas;
+      document.getElementById('total-disponivel').textContent = sumDisponivel;
     }
 
-    // Carrega o estoque automaticamente ao abrir a página
     window.addEventListener('DOMContentLoaded', carregarEstoque);
   </script>
 </body>
