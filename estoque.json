@@ -8,7 +8,7 @@
     { "tamanho": "PP", "fisico": 9, "producao": 0, "reservado": 0 },
     { "tamanho": "P", "fisico": 0, "producao": 25, "reservado": 9 },
     { "tamanho": "M", "fisico": 0, "producao": 35, "reservado": 18 },
-    { "tamanho": "G", "fisico": 0, "producao": 35, "reservado": 14 },
+    { "tamanho": "G", "fisico": 0, "producao": 35, "reservado": 15 },
     { "tamanho": "GG", "fisico": 1, "producao": 5, "reservado": 3 },
     { "tamanho": "XGG", "fisico": 0, "producao": 4, "reservado": 4 },
     { "tamanho": "GG Polo", "fisico": 0, "producao": 2, "reservado": 2 }
