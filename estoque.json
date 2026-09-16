@@ -1,7 +1,7 @@
 {
   "ultima_atualizacao": "16/09/2026",
   "itens": [
-    { "tamanho": "02 anos", "fisico": 1, "producao": 0, "reservado": 0 },
+    { "tamanho": "02 anos", "fisico": 0, "producao": 0, "reservado": 0 },
     { "tamanho": "04 anos", "fisico": 1, "producao": 0, "reservado": 0 },
     { "tamanho": "10 anos", "fisico": 3, "producao": 0, "reservado": 0 },
     { "tamanho": "12 anos", "fisico": 7, "producao": 0, "reservado": 0 },
