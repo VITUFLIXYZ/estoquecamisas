@@ -7,7 +7,7 @@
     { "tamanho": "12 anos", "fisico": 7, "producao": 0, "reservado": 0 },
     { "tamanho": "PP", "fisico": 9, "producao": 0, "reservado": 0 },
     { "tamanho": "P", "fisico": 0, "producao": 25, "reservado": 10 },
-    { "tamanho": "M", "fisico": 0, "producao": 35, "reservado": 20 },
+    { "tamanho": "M", "fisico": 0, "producao": 35, "reservado": 21 },
     { "tamanho": "G", "fisico": 0, "producao": 35, "reservado": 18 },
     { "tamanho": "GG", "fisico": 0, "producao": 5, "reservado": 3 },
     { "tamanho": "XGG", "fisico": 0, "producao": 4, "reservado": 4 },
